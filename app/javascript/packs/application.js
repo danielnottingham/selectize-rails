@@ -5,7 +5,9 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require selectize
 
+require("selectize")
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -17,3 +19,7 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).on("turbolinks:load", function() {
+  $(".selectize").selectize();
+});
